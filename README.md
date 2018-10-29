@@ -44,6 +44,7 @@ WHERE DATE(co.date_due) = DATE_ADD(curdate(), INTERVAL 1 DAY)
  There are two files `koha_sms_v1.py` and `koha_sms_v2.py`. v1 will use the number in `phone` field. v2 is specifically for my organization. It will check both `phone` and `mobile` field and will send message to one number. 
  
  ## Credits
- Nicole C. Baratta, ByWater Solutions, Koha List
+ Nicole C. Baratta, ByWater Solutions, Koha List <br>
  Made the SQL Query  <br>
  A huge thanks to them :) <br>
+ https://wiki.koha-community.org/wiki/SQL_Reports_Circulation#Patrons_w.2F_Books_Due_Tomorrow
