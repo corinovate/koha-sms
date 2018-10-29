@@ -31,6 +31,7 @@ LEFT JOIN items i ON(co.itemnumber=i.itemnumber)
 LEFT JOIN biblio b ON (b.biblionumber=i.biblionumber)
 WHERE DATE(co.date_due) = DATE_ADD(curdate(), INTERVAL 1 DAY)
  AND i.homebranch = "VCL" 
+ '''
  ```
  You can change the due day from 1 to 3 by changing `INTERVAL 1 DAY` to `INTERVAL 3 DAY`. `INTERVAL -1 DAY` wil show the details of patrons whose books are already due, a day before. Also change the branchname to the appropriate ` i.homebranch = "VCL"`.
  
