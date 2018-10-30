@@ -35,6 +35,18 @@ WHERE DATE(co.date_due) = DATE_ADD(curdate(), INTERVAL 1 DAY)
  ```
  You can change the due day from 1 to 3 by changing `INTERVAL 1 DAY` to `INTERVAL 3 DAY`. `INTERVAL -1 DAY` wil show the details of patrons whose books are already due, a day before. Also change the branchname to the appropriate ` i.homebranch = "VCL"`.
  
+ Here, Msgowl API (Maldives) is used for sending SMS. You can use your own API in this section.
+ `AccessKey` is the API key and `sender_id` is the id we get from API.
+ ```
+ headers = {
+    'Authorization': 'AccessKey 1234567890',
+}
+ :
+ :
+ data = dict(body=message, recipients=mob_no, sender_id='vc-library')
+ response = requests.post('https://rest.msgowl.com/messages', headers=headers, data=data)
+ ```
+ 
  ## Scheduling
  ```
  $ crontab -e
